@@ -20,3 +20,18 @@ utilizado na plataforma inteligente de gestão de emergências.
 - `app.py` — aplicação Flask
 - `modelo/` — modelo Random Forest treinado
 - `services/` — serviços de processamento e previsão
+
+## Passo a passo
+### Ative o ambiente venv
+
+Windows:
+venv\Scripts\activate
+
+Se estiver usando Linux/WSL:
+source venv/bin/activate
+
+### Instale as dependências:
+pip install -r requirements.txt
+
+### Execute:
+python app.py
