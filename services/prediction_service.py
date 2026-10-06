@@ -11,7 +11,7 @@ from services.preprocessing import preparar_dados
 MODEL_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)),
     "modelo",
-    "random_forest_ai4i.pkl"
+    "random_forest_ai4i_obd2.pkl"
 )
 
 
