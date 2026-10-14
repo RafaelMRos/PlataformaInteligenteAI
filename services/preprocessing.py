@@ -6,9 +6,9 @@ FEATURES = [
     "Process temperature [K]",
     "Rotational speed [rpm]",
     "Torque [Nm]",
-    "Tool wear [min]",
-    "Type_L",
-    "Type_M"
+#    "Tool wear [min]",
+#    "Type_L",
+#    "Type_M"
 ]
 
 
@@ -24,8 +24,8 @@ def preparar_dados(dados):
         "process_temperature",
         "rpm",
         "torque",
-        "tool_wear",
-        "type"
+#        "tool_wear",
+#        "type"
     ]
 
     campos_faltantes = [
@@ -51,11 +51,11 @@ def preparar_dados(dados):
         "Process temperature [K]": dados["process_temperature"],
         "Rotational speed [rpm]": dados["rpm"],
         "Torque [Nm]": dados["torque"],
-        "Tool wear [min]": dados["tool_wear"],
+#        "Tool wear [min]": dados["tool_wear"],
 
         # Equivalente ao pd.get_dummies(..., drop_first=True)
-        "Type_L": 1 if tipo == "L" else 0,
-        "Type_M": 1 if tipo == "M" else 0
+#        "Type_L": 1 if tipo == "L" else 0,
+#        "Type_M": 1 if tipo == "M" else 0
     }])
 
     # Garante exatamente a mesma ordem utilizada no treinamento
