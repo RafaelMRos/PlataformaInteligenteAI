@@ -33,14 +33,6 @@ def preparar_dados(dados):
             f"Campos obrigatórios ausentes: {campos_faltantes}"
         )
 
-    tipo = dados["type"].upper()
-
-    # O modelo foi treinado com Type como One-Hot Encoding
-    if tipo not in ["L", "M"]:
-        raise ValueError(
-            "O campo 'type' deve ser 'L' ou 'M'."
-        )
-
     entrada = pd.DataFrame([{
         "Air temperature [K]": dados["air_temperature"],
         "Process temperature [K]": dados["process_temperature"],

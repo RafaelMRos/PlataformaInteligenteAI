@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 from services.prediction_service import realizar_previsao
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 # ==========================================================
@@ -19,8 +21,11 @@ def home():
 # Endpoint de previsão
 # ==========================================================
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["POST", "OPTIONS"])
 def predict():
+
+    if request.method == "OPTIONS":
+        return "", 200
 
     try:
 
@@ -57,8 +62,10 @@ def predict():
 # ==========================================================
 
 if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5001))
     app.run(
         host="0.0.0.0",
-        port=5000,
+        port=port,
         debug=True
     )
